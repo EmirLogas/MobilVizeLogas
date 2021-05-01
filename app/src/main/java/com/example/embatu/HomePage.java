@@ -75,4 +75,10 @@ public class HomePage extends AppCompatActivity {
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
+
+    public void aes_img_AddPost_HomePage(View view) {
+        Intent intent = new Intent(this, PostPage.class);
+        intent.putExtra("user_ID", userID);
+        startActivity(intent);
+    }
 }

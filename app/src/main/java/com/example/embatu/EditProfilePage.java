@@ -19,9 +19,9 @@ import java.sql.Statement;
 
 public class EditProfilePage extends AppCompatActivity {
 
-    String userID, userBio;
-    TextView txt_UserID_EditProfilePage, notification_EditProfilePage;
-    EditText etxt_Bio_EditProfilePage;
+    String aes_userID, aes_userBio;
+    TextView aes_txt_UserID_EditProfilePage, aes_notification_EditProfilePage;
+    EditText aes_etxt_Bio_EditProfilePage;
 
     Connection connection;
     Statement statement;
@@ -37,22 +37,22 @@ public class EditProfilePage extends AppCompatActivity {
 
         getSupportActionBar().hide();
 
-        txt_UserID_EditProfilePage = findViewById(R.id.aes_txt_UserID_EditProfilePage);
-        etxt_Bio_EditProfilePage = findViewById(R.id.aes_etxt_Bio_EditProfilePage);
-        notification_EditProfilePage = findViewById(R.id.aes_notification_EditProfilePage);
+        aes_txt_UserID_EditProfilePage = findViewById(R.id.aes_txt_UserID_EditProfilePage);
+        aes_etxt_Bio_EditProfilePage = findViewById(R.id.aes_etxt_Bio_EditProfilePage);
+        aes_notification_EditProfilePage = findViewById(R.id.aes_notification_EditProfilePage);
 
         //take user_ID before activity
         Intent intent = getIntent();
         Bundle b = intent.getExtras();
         if (b != null) {
             String j = (String) b.get("user_ID");
-            userID = j;
+            aes_userID = j;
         }
 
-        txt_UserID_EditProfilePage.setText(userID);
+        aes_txt_UserID_EditProfilePage.setText(aes_userID);
 
 
-
+        //My localhost Database
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         String ip = "192.168.1.102";
@@ -62,27 +62,28 @@ public class EditProfilePage extends AppCompatActivity {
             statement = connection.createStatement();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-            notification_EditProfilePage.setTextColor(Color.parseColor("#fb3640"));
-            notification_EditProfilePage.setText("Bağlantı Hatası!");
+            aes_notification_EditProfilePage.setTextColor(Color.parseColor("#fb3640"));
+            aes_notification_EditProfilePage.setText("Bağlantı Hatası!");
             Log.e("ASK", throwables.getMessage());
         }
-
+        //check if he already had bio and take bio
         try {
-            resultSet = statement.executeQuery("SELECT user_Bio FROM UsersProfiles WHERE user_ID = '" + userID + "';");
+            resultSet = statement.executeQuery("SELECT user_Bio FROM UsersProfiles WHERE user_ID = '" + aes_userID + "';");
             while (resultSet.next()) {
-                userBio = resultSet.getString("user_Bio").trim();
-                etxt_Bio_EditProfilePage.setText(userBio);
+                aes_userBio = resultSet.getString("user_Bio").trim();
+                aes_etxt_Bio_EditProfilePage.setText(aes_userBio);
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
     }
-
+    //close edit page
     public void img_Back_EditProfilePage(View view) {
         finish();
     }
 
     public void btn_Save_EditProfilePage(View view) {
+        //Localhost Database
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
         String ip = "192.168.1.102";
@@ -92,24 +93,24 @@ public class EditProfilePage extends AppCompatActivity {
             statement = connection.createStatement();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
-            notification_EditProfilePage.setTextColor(Color.parseColor("#fb3640"));
-            notification_EditProfilePage.setText("Bağlantı Hatası!");
+            aes_notification_EditProfilePage.setTextColor(Color.parseColor("#fb3640"));
+            aes_notification_EditProfilePage.setText("Bağlantı Hatası!");
             Log.e("ASK", throwables.getMessage());
         }
 
-        if (etxt_Bio_EditProfilePage.getText().toString().trim().length() > 50) {
-            notification_EditProfilePage.setText("Biografi 50 karakteri geçemez");
+        if (aes_etxt_Bio_EditProfilePage.getText().toString().trim().length() > 50) {
+            aes_notification_EditProfilePage.setText("Biografi 50 karakteri geçemez");
         } else {
-            userBio = etxt_Bio_EditProfilePage.getText().toString().trim();
+            aes_userBio = aes_etxt_Bio_EditProfilePage.getText().toString().trim();
             try {
-                resultSet = statement.executeQuery("SELECT COUNT(*) AS int FROM UsersProfiles WHERE User_ID='" + userID + "';");
+                resultSet = statement.executeQuery("SELECT COUNT(*) AS int FROM UsersProfiles WHERE User_ID='" + aes_userID + "';");
                 while (resultSet.next()) {
                     if (resultSet.getInt("int") > 0) {
                         try {
-                            statement.executeUpdate("UPDATE UsersProfiles SET user_Bio = '" + userBio + "' WHERE user_ID = '" + userID + "';");
+                            statement.executeUpdate("UPDATE UsersProfiles SET user_Bio = '" + aes_userBio + "' WHERE user_ID = '" + aes_userID + "';");
                             hadBioBefore = true;
-                            notification_EditProfilePage.setTextColor(Color.parseColor("#16c79a"));
-                            notification_EditProfilePage.setText("Bilgiler Güncellendi");
+                            aes_notification_EditProfilePage.setTextColor(Color.parseColor("#16c79a"));
+                            aes_notification_EditProfilePage.setText("Bilgiler Güncellendi");
                         } catch (SQLException throwables) {
                             throwables.printStackTrace();
                         }
@@ -123,14 +124,14 @@ public class EditProfilePage extends AppCompatActivity {
             if (hadBioBefore == false) {
                 try {
                     statement = connection.createStatement();
-                    statement.executeUpdate("INSERT INTO UsersProfiles (user_ID,user_Bio) VALUES ('" + userID + "','" + userBio + "');");
-                    notification_EditProfilePage.setTextColor(Color.parseColor("#16c79a"));
-                    notification_EditProfilePage.setText("Bilgiler Güncellendi");
+                    statement.executeUpdate("INSERT INTO UsersProfiles (user_ID,user_Bio) VALUES ('" + aes_userID + "','" + aes_userBio + "');");
+                    aes_notification_EditProfilePage.setTextColor(Color.parseColor("#16c79a"));
+                    aes_notification_EditProfilePage.setText("Bilgiler Güncellendi");
                 } catch (SQLException throwables) {
                     throwables.printStackTrace();
                     Log.e("ASK", throwables.getMessage());
-                    notification_EditProfilePage.setTextColor(Color.parseColor("#fb3640"));
-                    notification_EditProfilePage.setText("Bilgiler Güncellenemedi!");
+                    aes_notification_EditProfilePage.setTextColor(Color.parseColor("#fb3640"));
+                    aes_notification_EditProfilePage.setText("Bilgiler Güncellenemedi!");
                 }
             }
         }

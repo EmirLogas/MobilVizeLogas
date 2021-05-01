@@ -72,6 +72,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="375dp"
         android:fontFamily="@font/righteous"
+        android:onClick="txt_Profile_HomePage"
         android:padding="10sp"
         android:text="Profil"
         android:textColor="#1C3144"
@@ -80,8 +81,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:onClick="txt_Profile_HomePage"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/aes_txt_Exit_HomePage"
@@ -89,6 +89,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="125dp"
         android:fontFamily="@font/righteous"
+        android:onClick="txt_Exit_HomePage"
         android:padding="10sp"
         android:text="Çıkış"
         android:textColor="#1C3144"
@@ -97,8 +98,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:onClick="txt_Exit_HomePage"/>
+        app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
         android:id="@+id/aes_img_Exit_HomePage"
@@ -127,12 +127,13 @@
         app:srcCompat="@drawable/menu" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/aes_img_AddPost_HomePage"
         android:layout_width="50sp"
         android:layout_height="50sp"
         android:layout_marginEnd="10dp"
         android:layout_marginRight="10dp"
         android:layout_marginBottom="10dp"
+        android:onClick="aes_img_AddPost_HomePage"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:srcCompat="@drawable/rectangle" />
@@ -141,10 +142,10 @@
         android:id="@+id/imageView4"
         android:layout_width="35sp"
         android:layout_height="35sp"
-        app:layout_constraintBottom_toBottomOf="@+id/imageView3"
-        app:layout_constraintEnd_toEndOf="@+id/imageView3"
-        app:layout_constraintStart_toStartOf="@+id/imageView3"
-        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:layout_constraintBottom_toBottomOf="@+id/aes_img_AddPost_HomePage"
+        app:layout_constraintEnd_toEndOf="@+id/aes_img_AddPost_HomePage"
+        app:layout_constraintStart_toStartOf="@+id/aes_img_AddPost_HomePage"
+        app:layout_constraintTop_toTopOf="@+id/aes_img_AddPost_HomePage"
         app:srcCompat="@drawable/add" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
