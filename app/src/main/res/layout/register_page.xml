@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".RegisterPage">
+
+    <Button
+        android:id="@+id/aes_btn_Back_RegisterPage"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="630dp"
+        android:layout_marginEnd="190dp"
+        android:layout_marginRight="190dp"
+        android:width="150sp"
+        android:fontFamily="@font/righteous"
+        android:onClick="btn_Back_RegisterPage"
+        android:text="Geri"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        app:backgroundTint="#FFBA08"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/aes_btn_Register_RegisterPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="190dp"
+        android:layout_marginLeft="190dp"
+        android:layout_marginTop="630dp"
+        android:width="150sp"
+        android:fontFamily="@font/righteous"
+        android:onClick="btn_Register_RegisterPage"
+        android:text="Kayıt Ol"
+        android:textAllCaps="false"
+        android:textSize="20sp"
+        app:backgroundTint="#FFBA08"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/aes_etxt_ID_RegisterPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="300dp"
+        android:width="280sp"
+        android:ems="10"
+        android:fontFamily="@font/righteous"
+        android:hint="Kullanıcı Adı"
+        android:inputType="textPersonName"
+        android:textColor="#1C3144"
+        android:textColorHint="#A2AEBB"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/aes_etxt_Pass_RegisterPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="150dp"
+        android:width="280sp"
+        android:ems="10"
+        android:fontFamily="@font/righteous"
+        android:hint="Şifre"
+        android:inputType="textPassword"
+        android:textColor="#1C3144"
+        android:textColorHint="#A2AEBB"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/aes_etxt_Mail_RegisterPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:width="280sp"
+        android:ems="10"
+        android:fontFamily="@font/righteous"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:textColor="#1C3144"
+        android:textColorHint="#A2AEBB"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="550dp"
+        android:fontFamily="@font/bebasneue"
+        android:text="Kayıt Ol"
+        android:textColor="#1C3144"
+        android:textSize="60sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/aes_notification_RegisterPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:fontFamily="@font/righteous"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+</androidx.constraintlayout.widget.ConstraintLayout>
