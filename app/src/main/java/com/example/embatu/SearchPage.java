@@ -56,7 +56,6 @@ public class SearchPage extends AppCompatActivity {
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 aes_SelectedItem_UserID = ((TextView) view).getText().toString();
                 openProfile(aes_SelectedItem_UserID);
-                Toast.makeText(getApplicationContext(), ((TextView) view).getText(), Toast.LENGTH_SHORT).show();
             }
         });
 
