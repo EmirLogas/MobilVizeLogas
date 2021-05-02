@@ -10,7 +10,7 @@ import android.widget.TextView;
 
 public class HomePage extends AppCompatActivity {
 
-    TextView txt_Embatu_HomePage, txt_HomePage_HomePage, txt_Profile_HomePage, txt_Settings_HomePage, txt_Exit_HomePage;
+    TextView txt_Embatu_HomePage, txt_HomePage_HomePage, txt_Profile_HomePage, txt_Settings_HomePage, txt_Exit_HomePage, aes_txt_SearchPage_HomePage;
     ImageView img_EmbatuImage_HomePage, img_Menu_HomePage, img_Exit_HomePage;
     String userID;
 
@@ -33,6 +33,7 @@ public class HomePage extends AppCompatActivity {
         txt_Profile_HomePage = findViewById(R.id.aes_txt_Profile_HomePage);
         txt_Settings_HomePage = findViewById(R.id.aes_txt_Settings_HomePage);
         txt_Exit_HomePage = findViewById(R.id.aes_txt_Exit_HomePage);
+        aes_txt_SearchPage_HomePage = findViewById(R.id.aes_txt_SearchPage_HomePage);
 
         img_Menu_HomePage = findViewById(R.id.aes_img_Menu_HomePage);
         img_Exit_HomePage = findViewById(R.id.aes_img_Exit_HomePage);
@@ -47,6 +48,7 @@ public class HomePage extends AppCompatActivity {
         txt_Profile_HomePage.setVisibility(View.VISIBLE);
         txt_Settings_HomePage.setVisibility(View.VISIBLE);
         txt_Exit_HomePage.setVisibility(View.VISIBLE);
+        aes_txt_SearchPage_HomePage.setVisibility(view.VISIBLE);
 
         img_Menu_HomePage.setVisibility(View.INVISIBLE);
         img_Exit_HomePage.setVisibility(View.VISIBLE);
@@ -59,6 +61,7 @@ public class HomePage extends AppCompatActivity {
         txt_Profile_HomePage.setVisibility(View.INVISIBLE);
         txt_Settings_HomePage.setVisibility(View.INVISIBLE);
         txt_Exit_HomePage.setVisibility(View.INVISIBLE);
+        aes_txt_SearchPage_HomePage.setVisibility(view.INVISIBLE);
 
         img_Menu_HomePage.setVisibility(View.VISIBLE);
         img_Exit_HomePage.setVisibility(View.INVISIBLE);
@@ -78,6 +81,12 @@ public class HomePage extends AppCompatActivity {
 
     public void aes_img_AddPost_HomePage(View view) {
         Intent intent = new Intent(this, PostPage.class);
+        intent.putExtra("user_ID", userID);
+        startActivity(intent);
+    }
+
+    public void aes_txt_SearchPage_HomePage(View view) {
+        Intent intent = new Intent(this, SearchPage.class);
         intent.putExtra("user_ID", userID);
         startActivity(intent);
     }

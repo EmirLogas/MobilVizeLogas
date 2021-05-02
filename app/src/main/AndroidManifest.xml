@@ -11,13 +11,30 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Embatu">
-        <activity android:name=".PostPage"></activity>
-        <activity android:name=".EditProfilePage" />
-        <activity android:name=".ProfilePage" />
-        <activity android:name=".HomePage" />
-        <activity android:name=".LoginPage" />
-        <activity android:name=".RegisterPage" />
-        <activity android:name=".MainPage">
+        <activity
+            android:name=".SearchPage"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".PostPage"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".EditProfilePage"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".ProfilePage"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".HomePage"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".LoginPage"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".RegisterPage"
+            android:windowSoftInputMode="adjustNothing" />
+        <activity
+            android:name=".MainPage"
+            android:windowSoftInputMode="adjustNothing">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

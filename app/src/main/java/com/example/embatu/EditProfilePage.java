@@ -77,6 +77,7 @@ public class EditProfilePage extends AppCompatActivity {
             throwables.printStackTrace();
         }
     }
+
     //close edit page
     public void img_Back_EditProfilePage(View view) {
         finish();

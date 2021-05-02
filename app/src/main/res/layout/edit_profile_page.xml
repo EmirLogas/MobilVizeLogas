@@ -20,15 +20,15 @@
 
     <ImageView
         android:id="@+id/aes_img_Back_EditProfilePage"
-        android:layout_width="35sp"
-        android:layout_height="35sp"
+        android:layout_width="35dp"
+        android:layout_height="35dp"
         android:layout_marginStart="10dp"
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
+        android:onClick="img_Back_EditProfilePage"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/back"
-        android:onClick="img_Back_EditProfilePage"/>
+        app:srcCompat="@drawable/back" />
 
     <TextView
         android:id="@+id/aes_txt_UserID_EditProfilePage"

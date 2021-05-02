@@ -51,10 +51,27 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
+        android:id="@+id/aes_txt_SearchPage_HomePage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="375dp"
+        android:fontFamily="@font/righteous"
+        android:padding="10sp"
+        android:text="Arama"
+        android:textColor="#1C3144"
+        android:textSize="30sp"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:onClick="aes_txt_SearchPage_HomePage"/>
+
+    <TextView
         android:id="@+id/aes_txt_Settings_HomePage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="250dp"
+        android:layout_marginBottom="125dp"
         android:fontFamily="@font/righteous"
         android:padding="10sp"
         android:text="Ayarlar"
@@ -70,7 +87,7 @@
         android:id="@+id/aes_txt_Profile_HomePage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="375dp"
+        android:layout_marginBottom="250dp"
         android:fontFamily="@font/righteous"
         android:onClick="txt_Profile_HomePage"
         android:padding="10sp"
@@ -87,7 +104,6 @@
         android:id="@+id/aes_txt_Exit_HomePage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="125dp"
         android:fontFamily="@font/righteous"
         android:onClick="txt_Exit_HomePage"
         android:padding="10sp"
