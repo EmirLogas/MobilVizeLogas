@@ -10,11 +10,12 @@
         android:id="@+id/aes_btn_Follow_ProfilePage"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_marginStart="190dp"
-        android:layout_marginLeft="190dp"
+        android:layout_marginStart="200dp"
+        android:layout_marginLeft="200dp"
         android:layout_marginBottom="440dp"
-        android:width="150sp"
+        android:width="180sp"
         android:fontFamily="@font/righteous"
+        android:onClick="aes_btn_Follow_ProfilePage"
         android:text="Takip et"
         android:textAllCaps="false"
         android:textSize="16sp"
@@ -56,22 +57,22 @@
         app:layout_constraintEnd_toEndOf="@+id/aes_btn_Follow_ProfilePage" />
 
     <TextView
-        android:id="@+id/textView8"
+        android:id="@+id/aes_txt_FollowersCount_ProfilePage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/righteous"
-        android:text="55"
+        android:text="0"
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/textView6"
         app:layout_constraintEnd_toEndOf="@+id/textView6"
         app:layout_constraintStart_toStartOf="@+id/textView6" />
 
     <TextView
-        android:id="@+id/textView9"
+        android:id="@+id/aes_txt_FollowingCount_ProfilePage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:fontFamily="@font/righteous"
-        android:text="44"
+        android:text="0"
         android:textSize="25sp"
         app:layout_constraintBottom_toTopOf="@+id/textView7"
         app:layout_constraintEnd_toEndOf="@+id/textView7"

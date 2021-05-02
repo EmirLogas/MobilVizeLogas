@@ -71,6 +71,7 @@ public class HomePage extends AppCompatActivity {
         Intent intent = new Intent(this, ProfilePage.class);
         intent.putExtra("isMyProfile", true);
         intent.putExtra("user_ID", userID);
+        intent.putExtra("targetUser_ID", userID);
         startActivity(intent);
     }
 
