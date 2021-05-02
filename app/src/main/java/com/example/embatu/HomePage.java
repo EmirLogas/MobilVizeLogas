@@ -69,6 +69,7 @@ public class HomePage extends AppCompatActivity {
 
     public void txt_Profile_HomePage(View view) {
         Intent intent = new Intent(this, ProfilePage.class);
+        intent.putExtra("isMyProfile", true);
         intent.putExtra("user_ID", userID);
         startActivity(intent);
     }

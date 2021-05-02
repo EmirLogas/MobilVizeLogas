@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.view.View;
+import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.sql.Connection;
@@ -17,7 +19,11 @@ import java.sql.Statement;
 public class ProfilePage extends AppCompatActivity {
 
     TextView textView, txt_UserBio_ProfilePage;
-    String userID, userBio;
+    String userID, userBio, targetUser_ID;
+    View aes_img_Edit_ProfilePage;
+    boolean isMyProfile;
+    Button aes_btn_Follow_ProfilePage;
+
 
     Connection connection;
     Statement statement;
@@ -46,16 +52,31 @@ public class ProfilePage extends AppCompatActivity {
 
         getSupportActionBar().hide();
 
+        aes_btn_Follow_ProfilePage = findViewById(R.id.aes_btn_Follow_ProfilePage);
         textView = findViewById(R.id.aes_txt_UserID_ProfilePage);
         txt_UserBio_ProfilePage = findViewById(R.id.aes_txt_UserBio_ProfilePage);
+        aes_img_Edit_ProfilePage = findViewById(R.id.aes_img_Edit_ProfilePage);
 
         Intent intent = getIntent();
-        Bundle b = intent.getExtras();
-        if (b != null) {
-            String j = (String) b.get("user_ID");
-            userID = j;
+        Bundle bundle = intent.getExtras();
+        if (bundle != null) {
+            isMyProfile = (boolean) bundle.get("isMyProfile");
+            targetUser_ID = (String) bundle.get("targetUser_ID");
+            userID = (String) bundle.get("user_ID");
+
+            if (isMyProfile == false) {
+                aes_img_Edit_ProfilePage.setVisibility(ImageView.INVISIBLE);
+                aes_btn_Follow_ProfilePage.setVisibility(Button.VISIBLE);
+                isMyProfile = false;
+                textView.setText(targetUser_ID);
+            }
+            if (isMyProfile == true) {
+                aes_img_Edit_ProfilePage.setVisibility(ImageView.VISIBLE);
+                aes_btn_Follow_ProfilePage.setVisibility(Button.INVISIBLE);
+                isMyProfile = true;
+                textView.setText(userID);
+            }
         }
-        textView.setText(userID);
 
         try {
             resultSet = statement.executeQuery("SELECT user_Bio FROM UsersProfiles WHERE user_ID = '" + userID + "';");

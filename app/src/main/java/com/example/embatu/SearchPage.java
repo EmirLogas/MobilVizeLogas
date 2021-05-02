@@ -2,15 +2,19 @@ package com.example.embatu;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -25,6 +29,7 @@ public class SearchPage extends AppCompatActivity {
     EditText aes_etxt_Search_SearchPage;
 
     ListView aes_ListV_SearchPage;
+    ArrayAdapter arrayAdapter;
 
     Connection connection;
     Statement statement;
@@ -32,6 +37,7 @@ public class SearchPage extends AppCompatActivity {
 
     String aes_SearchUserID;
     String aes_userID;
+    String aes_SelectedItem_UserID;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +51,14 @@ public class SearchPage extends AppCompatActivity {
         //ArrayList aes_Profiles = new ArrayList();
         //ArrayAdapter arrayAdapter=new ArrayAdapter()
 
+        aes_ListV_SearchPage.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                aes_SelectedItem_UserID = ((TextView) view).getText().toString();
+                openProfile(aes_SelectedItem_UserID);
+                Toast.makeText(getApplicationContext(), ((TextView) view).getText(), Toast.LENGTH_SHORT).show();
+            }
+        });
 
         aes_etxt_Search_SearchPage = findViewById(R.id.aes_etxt_Search_SearchPage);
         aes_etxt_Search_SearchPage.addTextChangedListener(new TextWatcher() {
@@ -93,11 +107,18 @@ public class SearchPage extends AppCompatActivity {
                 aes_userID = resultSet.getString("user_ID").trim();
                 aes_Profiles.add(aes_userID);
             }
-            ArrayAdapter arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1, aes_Profiles);
+            arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1, aes_Profiles);
             aes_ListV_SearchPage.setAdapter(arrayAdapter);
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
+    }
+
+    void openProfile(String aes_SelectedItem_UserID) {
+        Intent intent = new Intent(this, ProfilePage.class);
+        intent.putExtra("isMyProfile", false);
+        intent.putExtra("targetUser_ID", aes_SelectedItem_UserID);
+        startActivity(intent);
     }
 
     public void aes_img_Back_SearchPage(View view) {
