@@ -43,7 +43,7 @@ public class ProfilePage extends AppCompatActivity {
         super.onStart();
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
-        String ip = "192.168.1.102";
+        String ip = "192.168.1.106";
         String ConnectionURL = "jdbc:jtds:sqlserver://" + ip + ";instance=EMIRLOCAL;user=sa;password=964964ae;databasename=Embatu";
         try {
             connection = DriverManager.getConnection(ConnectionURL);
@@ -164,7 +164,7 @@ public class ProfilePage extends AppCompatActivity {
     void checkFollowCounts() {
         StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
         StrictMode.setThreadPolicy(policy);
-        String ip = "192.168.1.102";
+        String ip = "192.168.1.106";
         String ConnectionURL = "jdbc:jtds:sqlserver://" + ip + ";instance=EMIRLOCAL;user=sa;password=964964ae;databasename=Embatu";
         try {
             connection = DriverManager.getConnection(ConnectionURL);

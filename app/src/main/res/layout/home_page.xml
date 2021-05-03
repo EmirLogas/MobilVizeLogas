@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     tools:context=".HomePage">
 
+    <ListView
+        android:id="@+id/aes_ListV_HomePage"
+        android:layout_width="match_parent"
+        android:layout_height="680dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <TextView
         android:id="@+id/aes_txt_Logas_HomePage"
         android:layout_width="wrap_content"
@@ -137,7 +147,6 @@
         android:layout_marginLeft="10dp"
         android:layout_marginTop="10dp"
         android:onClick="btn_Menu_HomePage"
-        android:visibility="visible"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/menu" />
