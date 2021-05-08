@@ -87,7 +87,7 @@ public class ProfilePage extends AppCompatActivity {
         }
 
         try {
-            resultSet = statement.executeQuery("SELECT user_Pic FROM UsersProfiles WHERE user_ID = '" + userID + "';");
+            resultSet = statement.executeQuery("SELECT user_Pic FROM UsersProfiles WHERE user_ID = '" + targetUser_ID + "';");
             while (resultSet.next()) {
                 if (resultSet.getBytes("user_Pic") != null) {
                     String image = resultSet.getString("user_Pic");

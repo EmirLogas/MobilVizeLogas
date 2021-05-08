@@ -20,13 +20,12 @@
         android:id="@+id/aes_txt_Logas_HomePage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="660dp"
+        android:layout_marginTop="10dp"
         android:fontFamily="@font/bebasneue"
         android:text="Logas"
         android:textColor="#FFBA08"
         android:textSize="50sp"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -35,13 +34,12 @@
         android:id="@+id/aes_img_LogasImage_HomePage"
         android:layout_width="300sp"
         android:layout_height="2sp"
-        android:layout_marginBottom="590dp"
+        android:layout_marginTop="10dp"
         android:scaleType="center"
         android:visibility="invisible"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/aes_txt_Logas_HomePage"
         app:srcCompat="@drawable/black" />
 
     <TextView
