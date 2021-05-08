@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Log;
 import android.view.View;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 
@@ -26,6 +27,7 @@ public class RegisterPage extends AppCompatActivity {
     Connection connection;
     Statement statement;
     ResultSet resultSet;
+    CheckBox aes_cBox_Agree_RegisterPage;
 
     boolean User_ID_Taked = false;
 
@@ -41,6 +43,7 @@ public class RegisterPage extends AppCompatActivity {
         etxt_Pass_RegisterPage = findViewById(R.id.aes_etxt_Pass_RegisterPage);
         etxt_Mail_RegisterPage = findViewById(R.id.aes_etxt_Mail_RegisterPage);
         notification_RegisterPage = findViewById(R.id.aes_notification_RegisterPage);
+        aes_cBox_Agree_RegisterPage = findViewById(R.id.aes_cBox_Agree_RegisterPage);
     }
 
     public void btn_Register_RegisterPage(View view) {
@@ -59,51 +62,57 @@ public class RegisterPage extends AppCompatActivity {
             Log.e("ASK", throwables.getMessage());
         }
 
-
-        if (etxt_ID_RegisterPage.getText().toString().trim().length() <= 0 || etxt_Pass_RegisterPage.getText().toString().trim().length() <= 0 || etxt_Mail_RegisterPage.getText().toString().trim().length() <= 0) {
-            notification_RegisterPage.setTextColor(Color.parseColor("#fb3640"));
-            notification_RegisterPage.setText("Bilgiler Eksiksiz Girilmeli!");
-        } else {
-            userID = etxt_ID_RegisterPage.getText().toString();
-            userPass = etxt_Pass_RegisterPage.getText().toString();
-            userEmail = etxt_Mail_RegisterPage.getText().toString();
-            if (isValidEmail(userEmail) == false) {
+        if (aes_cBox_Agree_RegisterPage.isChecked()==true){
+            if (etxt_ID_RegisterPage.getText().toString().trim().length() <= 0 || etxt_Pass_RegisterPage.getText().toString().trim().length() <= 0 || etxt_Mail_RegisterPage.getText().toString().trim().length() <= 0) {
                 notification_RegisterPage.setTextColor(Color.parseColor("#fb3640"));
-                notification_RegisterPage.setText("Geçersiz Email adresi!");
+                notification_RegisterPage.setText("Bilgiler Eksiksiz Girilmeli!");
             } else {
-                try {
-                    resultSet = statement.executeQuery("SELECT COUNT(User_ID) AS int FROM Users WHERE User_ID='" + userID + "';");
-                    while (resultSet.next()) {
-                        if (resultSet.getInt("int") > 0) {
-                            notification_RegisterPage.setTextColor(Color.parseColor("#fb3640"));
-                            notification_RegisterPage.setText("Kullanıcı adı kullanımda!");
-                            User_ID_Taked = true;
-                        } else {
-                            User_ID_Taked = false;
-                        }
-                    }
-                    resultSet = null;
-                } catch (SQLException throwables) {
-                    throwables.printStackTrace();
+                userID = etxt_ID_RegisterPage.getText().toString();
+                userPass = etxt_Pass_RegisterPage.getText().toString();
+                userEmail = etxt_Mail_RegisterPage.getText().toString();
+                if (isValidEmail(userEmail) == false) {
                     notification_RegisterPage.setTextColor(Color.parseColor("#fb3640"));
-                    notification_RegisterPage.setText("ExecuteQuery Hatası");
-                    Log.e("ASK", throwables.getMessage());
-                }
-                if (User_ID_Taked == false) {
+                    notification_RegisterPage.setText("Geçersiz Email adresi!");
+                } else {
                     try {
-                        statement = connection.createStatement();
-                        statement.executeUpdate("INSERT INTO Users (user_ID, user_Pass, user_Email)" + " VALUES ('" + userID + "','" + userPass + "','" + userEmail + "');");
-                        notification_RegisterPage.setTextColor(Color.parseColor("#16c79a"));
-                        notification_RegisterPage.setText("Kayıt tamamlandı!");
+                        resultSet = statement.executeQuery("SELECT COUNT(User_ID) AS int FROM Users WHERE User_ID='" + userID + "';");
+                        while (resultSet.next()) {
+                            if (resultSet.getInt("int") > 0) {
+                                notification_RegisterPage.setTextColor(Color.parseColor("#fb3640"));
+                                notification_RegisterPage.setText("Kullanıcı adı kullanımda!");
+                                User_ID_Taked = true;
+                            } else {
+                                User_ID_Taked = false;
+                            }
+                        }
+                        resultSet = null;
                     } catch (SQLException throwables) {
                         throwables.printStackTrace();
-                        Log.e("ASK", throwables.getMessage());
                         notification_RegisterPage.setTextColor(Color.parseColor("#fb3640"));
-                        notification_RegisterPage.setText("Kayıt tamamlanamadı!");
+                        notification_RegisterPage.setText("ExecuteQuery Hatası");
+                        Log.e("ASK", throwables.getMessage());
+                    }
+                    if (User_ID_Taked == false) {
+                        try {
+                            statement = connection.createStatement();
+                            statement.executeUpdate("INSERT INTO Users (user_ID, user_Pass, user_Email)" + " VALUES ('" + userID + "','" + userPass + "','" + userEmail + "');");
+                            notification_RegisterPage.setTextColor(Color.parseColor("#16c79a"));
+                            notification_RegisterPage.setText("Kayıt tamamlandı!");
+                        } catch (SQLException throwables) {
+                            throwables.printStackTrace();
+                            Log.e("ASK", throwables.getMessage());
+                            notification_RegisterPage.setTextColor(Color.parseColor("#fb3640"));
+                            notification_RegisterPage.setText("Kayıt tamamlanamadı!");
+                        }
                     }
                 }
             }
         }
+        else {
+            notification_RegisterPage.setTextColor(Color.parseColor("#fb3640"));
+            notification_RegisterPage.setText("Sözleşme kabul edilmeli!");
+        }
+
     }
 
     public static boolean isValidEmail(String email) {

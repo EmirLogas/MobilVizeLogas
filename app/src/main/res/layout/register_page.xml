@@ -115,11 +115,22 @@
         android:id="@+id/aes_notification_RegisterPage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="150dp"
+        android:layout_marginTop="300dp"
         android:fontFamily="@font/righteous"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <CheckBox
+        android:id="@+id/aes_cBox_Agree_RegisterPage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30dp"
+        android:fontFamily="@font/righteous"
+        android:text="Sözleşmeleri kabul ediyorum."
+        app:layout_constraintStart_toStartOf="@+id/aes_etxt_Mail_RegisterPage"
+        app:layout_constraintTop_toBottomOf="@+id/aes_etxt_Mail_RegisterPage" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
