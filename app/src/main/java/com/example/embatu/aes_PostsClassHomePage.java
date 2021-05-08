@@ -1,9 +1,9 @@
 package com.example.embatu;
 
-public class PostsClassHomePage {
+public class aes_PostsClassHomePage {
     String user_ID,post_Text;
 
-    public PostsClassHomePage(String user_ID, String post_Text) {
+    public aes_PostsClassHomePage(String user_ID, String post_Text) {
         this.user_ID = user_ID;
         this.post_Text = post_Text;
     }

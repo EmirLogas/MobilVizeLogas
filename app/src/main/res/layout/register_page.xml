@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".RegisterPage">
+    tools:context=".aes_RegisterPage">
 
     <Button
         android:id="@+id/aes_btn_Back_RegisterPage"

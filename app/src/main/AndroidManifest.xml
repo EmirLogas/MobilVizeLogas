@@ -15,28 +15,28 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Embatu">
         <activity
-            android:name=".SearchPage"
+            android:name=".aes_SearchPage"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name=".PostPage"
+            android:name=".aes_PostPage"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name=".EditProfilePage"
+            android:name=".aes_EditProfilePage"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name=".ProfilePage"
+            android:name=".aes_ProfilePage"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name=".HomePage"
+            android:name=".aes_HomePage"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name=".LoginPage"
+            android:name=".aes_LoginPage"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name=".RegisterPage"
+            android:name=".aes_RegisterPage"
             android:windowSoftInputMode="adjustNothing" />
         <activity
-            android:name=".MainPage"
+            android:name=".aes_MainPage"
             android:windowSoftInputMode="adjustNothing">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

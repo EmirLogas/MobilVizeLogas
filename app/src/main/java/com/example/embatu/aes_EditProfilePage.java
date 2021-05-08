@@ -28,7 +28,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class EditProfilePage extends AppCompatActivity {
+public class aes_EditProfilePage extends AppCompatActivity {
 
     String aes_userID, aes_userBio, aes_userGender;
     TextView aes_txt_UserID_EditProfilePage, aes_notification_EditProfilePage;

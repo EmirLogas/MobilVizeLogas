@@ -18,7 +18,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public class HomePage extends AppCompatActivity {
+public class aes_HomePage extends AppCompatActivity {
 
     TextView txt_Embatu_HomePage, txt_HomePage_HomePage, txt_Profile_HomePage, txt_Settings_HomePage, txt_Exit_HomePage, aes_txt_SearchPage_HomePage;
     ImageView img_EmbatuImage_HomePage, img_Menu_HomePage, img_Exit_HomePage;
@@ -87,7 +87,7 @@ public class HomePage extends AppCompatActivity {
 
         ArrayList followingUsersPost = new ArrayList();
         ArrayList newfollowingUsersPost = new ArrayList();
-        PostListAdapter adapter = null;
+        aes_PostListAdapter adapter = null;
 
 
         for (int i = 0; i < followingUsersList.size(); i++) {
@@ -97,9 +97,9 @@ public class HomePage extends AppCompatActivity {
                 followingUsersPosts.clear();
                 while (resultSet.next()) {
                     aes_PostItems = resultSet.getString("post_Text").trim();
-                    PostsClassHomePage postsClassHomePage = new PostsClassHomePage(followingUsersList.get(i).toString(), aes_PostItems);
-                    newfollowingUsersPost.add(postsClassHomePage);
-                    adapter = new PostListAdapter(this, R.layout.home_page_post_view, newfollowingUsersPost);
+                    aes_PostsClassHomePage aesPostsClassHomePage = new aes_PostsClassHomePage(followingUsersList.get(i).toString(), aes_PostItems);
+                    newfollowingUsersPost.add(aesPostsClassHomePage);
+                    adapter = new aes_PostListAdapter(this, R.layout.home_page_post_view, newfollowingUsersPost);
                     followingUsersPost.add(aes_PostItems);
                 }
                 //arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1, followingUsersPost);
@@ -167,7 +167,7 @@ public class HomePage extends AppCompatActivity {
 
         ArrayList followingUsersPost = new ArrayList();
         ArrayList newfollowingUsersPost = new ArrayList();
-        PostListAdapter adapter = null;
+        aes_PostListAdapter adapter = null;
 
 
         for (int i = 0; i < followingUsersList.size(); i++) {
@@ -177,9 +177,9 @@ public class HomePage extends AppCompatActivity {
                 followingUsersPosts.clear();
                 while (resultSet.next()) {
                     aes_PostItems = resultSet.getString("post_Text").trim();
-                    PostsClassHomePage postsClassHomePage = new PostsClassHomePage(followingUsersList.get(i).toString(), aes_PostItems);
-                    newfollowingUsersPost.add(postsClassHomePage);
-                    adapter = new PostListAdapter(this, R.layout.home_page_post_view, newfollowingUsersPost);
+                    aes_PostsClassHomePage aesPostsClassHomePage = new aes_PostsClassHomePage(followingUsersList.get(i).toString(), aes_PostItems);
+                    newfollowingUsersPost.add(aesPostsClassHomePage);
+                    adapter = new aes_PostListAdapter(this, R.layout.home_page_post_view, newfollowingUsersPost);
                     followingUsersPost.add(aes_PostItems);
                 }
                 //arrayAdapter = new ArrayAdapter(this, android.R.layout.simple_list_item_1, android.R.id.text1, followingUsersPost);
@@ -191,7 +191,7 @@ public class HomePage extends AppCompatActivity {
     }
 
     public void txt_Profile_HomePage(View view) {
-        Intent intent = new Intent(this, ProfilePage.class);
+        Intent intent = new Intent(this, aes_ProfilePage.class);
         intent.putExtra("isMyProfile", true);
         intent.putExtra("user_ID", userID);
         intent.putExtra("targetUser_ID", userID);
@@ -199,19 +199,19 @@ public class HomePage extends AppCompatActivity {
     }
 
     public void txt_Exit_HomePage(View view) {
-        Intent intent = new Intent(this, MainPage.class);
+        Intent intent = new Intent(this, aes_MainPage.class);
         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
         startActivity(intent);
     }
 
     public void aes_img_AddPost_HomePage(View view) {
-        Intent intent = new Intent(this, PostPage.class);
+        Intent intent = new Intent(this, aes_PostPage.class);
         intent.putExtra("user_ID", userID);
         startActivity(intent);
     }
 
     public void aes_txt_SearchPage_HomePage(View view) {
-        Intent intent = new Intent(this, SearchPage.class);
+        Intent intent = new Intent(this, aes_SearchPage.class);
         intent.putExtra("user_ID", userID);
         startActivity(intent);
     }

@@ -17,7 +17,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class LoginPage extends AppCompatActivity {
+public class aes_LoginPage extends AppCompatActivity {
 
 
     String userID, userPass;
@@ -40,7 +40,7 @@ public class LoginPage extends AppCompatActivity {
     }
 
     public void btn_Back_LoginPage(View view) {
-        Intent intent = new Intent(this, MainPage.class);
+        Intent intent = new Intent(this, aes_MainPage.class);
         startActivity(intent);
     }
 
@@ -75,7 +75,7 @@ public class LoginPage extends AppCompatActivity {
                         notification_LoginPage.setTextColor(Color.parseColor("#fb3640"));
                         notification_LoginPage.setText("Kullanıcı adı veya şifre yanlış!");
                     } else {
-                        Intent intent = new Intent(this, HomePage.class);
+                        Intent intent = new Intent(this, aes_HomePage.class);
                         intent.putExtra("user_ID", userID);
                         intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);

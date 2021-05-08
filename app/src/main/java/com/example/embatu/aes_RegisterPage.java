@@ -19,7 +19,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.regex.Pattern;
 
-public class RegisterPage extends AppCompatActivity {
+public class aes_RegisterPage extends AppCompatActivity {
 
     String userID, userPass, userEmail;
     EditText etxt_ID_RegisterPage, etxt_Pass_RegisterPage, etxt_Mail_RegisterPage;
@@ -128,7 +128,7 @@ public class RegisterPage extends AppCompatActivity {
     }
 
     public void btn_Back_RegisterPage(View view) {
-        Intent intent = new Intent(this, MainPage.class);
+        Intent intent = new Intent(this, aes_MainPage.class);
         startActivity(intent);
     }
 }

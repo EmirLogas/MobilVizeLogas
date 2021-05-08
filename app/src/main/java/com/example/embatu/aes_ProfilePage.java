@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
-import android.graphics.Color;
 import android.os.Bundle;
 import android.os.StrictMode;
 import android.util.Base64;
@@ -21,7 +20,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class ProfilePage extends AppCompatActivity {
+public class aes_ProfilePage extends AppCompatActivity {
 
     TextView textView, txt_UserBio_ProfilePage, aes_txt_FollowersCount_ProfilePage, aes_txt_FollowingCount_ProfilePage;
     ImageView aes_img_ProfileImage_ProfilePage;
@@ -146,7 +145,7 @@ public class ProfilePage extends AppCompatActivity {
     }
 
     public void img_Edit_ProfilePage(View view) {
-        Intent intent = new Intent(this, EditProfilePage.class);
+        Intent intent = new Intent(this, aes_EditProfilePage.class);
         intent.putExtra("user_ID", userID);
         startActivity(intent);
     }

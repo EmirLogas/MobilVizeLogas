@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".PostPage">
+    tools:context=".aes_PostPage">
 
     <ImageView
         android:id="@+id/aes_img_Back_PostPage"

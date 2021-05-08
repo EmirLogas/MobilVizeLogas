@@ -16,7 +16,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-public class PostPage extends AppCompatActivity {
+public class aes_PostPage extends AppCompatActivity {
 
 
     Connection connection;

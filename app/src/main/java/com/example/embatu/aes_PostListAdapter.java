@@ -7,16 +7,13 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
-import org.w3c.dom.Text;
-
 import java.util.ArrayList;
-import java.util.List;
 
-public class PostListAdapter extends ArrayAdapter<PostsClassHomePage> {
+public class aes_PostListAdapter extends ArrayAdapter<aes_PostsClassHomePage> {
     Context mContext;
     int mResource;
 
-    public PostListAdapter(Context context, int resource, ArrayList<PostsClassHomePage> objects) {
+    public aes_PostListAdapter(Context context, int resource, ArrayList<aes_PostsClassHomePage> objects) {
         super(context, resource, objects);
         mContext = context;
         mResource = resource;
@@ -27,7 +24,7 @@ public class PostListAdapter extends ArrayAdapter<PostsClassHomePage> {
         String user_ID = getItem(position).getUser_ID();
         String post_Text = getItem(position).getPost_Text();
 
-        PostsClassHomePage postsClassHomePage = new PostsClassHomePage(user_ID, post_Text);
+        aes_PostsClassHomePage aesPostsClassHomePage = new aes_PostsClassHomePage(user_ID, post_Text);
 
         LayoutInflater inflater = LayoutInflater.from(mContext);
         convertView = inflater.inflate(mResource, parent, false);

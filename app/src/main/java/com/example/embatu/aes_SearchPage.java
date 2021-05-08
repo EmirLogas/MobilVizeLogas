@@ -22,7 +22,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-public class SearchPage extends AppCompatActivity {
+public class aes_SearchPage extends AppCompatActivity {
 
 
     EditText aes_etxt_Search_SearchPage;
@@ -119,7 +119,7 @@ public class SearchPage extends AppCompatActivity {
 
     void openProfile(String aes_SelectedItem_UserID) {
 
-        Intent intent = new Intent(this, ProfilePage.class);
+        Intent intent = new Intent(this, aes_ProfilePage.class);
         if (aes_userID.equals(aes_SelectedItem_UserID)) {
             intent.putExtra("isMyProfile", true);
         } else {
