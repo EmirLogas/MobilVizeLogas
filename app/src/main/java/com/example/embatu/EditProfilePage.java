@@ -165,7 +165,7 @@ public class EditProfilePage extends AppCompatActivity {
             if (aes_hadBioBefore == false) {
                 try {
                     statement = connection.createStatement();
-                    statement.executeUpdate("INSERT INTO UsersProfiles (user_ID,user_Bio,user_Pic,user_Gender) VALUES ('" + aes_userID + "','" + aes_userBio + "', " + image + " ,'" + aes_userGender + "');");
+                    statement.executeUpdate("INSERT INTO UsersProfiles (user_ID,user_Bio,user_Pic,user_Gender) VALUES ('" + aes_userID + "','" + aes_userBio + "', '" + image + "' ,'" + aes_userGender + "');");
                     aes_notification_EditProfilePage.setTextColor(Color.parseColor("#16c79a"));
                     aes_notification_EditProfilePage.setText("Bilgiler Güncellendi");
                 } catch (SQLException throwables) {
