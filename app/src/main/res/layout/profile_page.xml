@@ -10,9 +10,9 @@
         android:id="@+id/aes_btn_Follow_ProfilePage"
         android:layout_width="wrap_content"
         android:layout_height="40dp"
-        android:layout_marginStart="200dp"
-        android:layout_marginLeft="200dp"
-        android:layout_marginBottom="440dp"
+        android:layout_marginStart="170dp"
+        android:layout_marginLeft="170dp"
+        android:layout_marginBottom="410dp"
         android:width="180sp"
         android:fontFamily="@font/righteous"
         android:onClick="aes_btn_Follow_ProfilePage"
@@ -42,6 +42,7 @@
         android:id="@+id/textView6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
         android:fontFamily="@font/righteous"
         android:text="Takipçi"
         app:layout_constraintBottom_toTopOf="@+id/aes_btn_Follow_ProfilePage"
@@ -51,6 +52,7 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="5dp"
         android:fontFamily="@font/righteous"
         android:text="Takip Edilen"
         app:layout_constraintBottom_toTopOf="@+id/aes_btn_Follow_ProfilePage"
@@ -82,7 +84,7 @@
         android:id="@+id/aes_txt_UserBio_ProfilePage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="360dp"
+        android:layout_marginBottom="300dp"
         android:fontFamily="@font/righteous"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -112,5 +114,16 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/profileedit" />
+
+    <ImageView
+        android:id="@+id/aes_img_ProfileImage_ProfilePage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="40dp"
+        android:layout_marginLeft="40dp"
+        android:layout_marginTop="65dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:srcCompat="@tools:sample/avatars" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

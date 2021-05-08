@@ -50,7 +50,7 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="250dp"
         android:layout_marginRight="250dp"
-        android:layout_marginBottom="450dp"
+        android:layout_marginBottom="100dp"
         android:fontFamily="@font/righteous"
         android:text="Biyografi :"
         android:textSize="20sp"
@@ -65,7 +65,6 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="250dp"
         android:layout_marginRight="250dp"
-        android:layout_marginBottom="300dp"
         android:fontFamily="@font/righteous"
         android:text="Cinsiyet :"
         android:textSize="20sp"
@@ -103,8 +102,23 @@
         app:layout_constraintTop_toTopOf="parent"
         android:onClick="btn_Save_EditProfilePage"/>
 
+    <Button
+        android:id="@+id/aes_btn_AddPhoto_EditProfilePage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="250dp"
+        android:fontFamily="@font/righteous"
+        android:onClick="aes_btn_AddPhoto_EditProfilePage"
+        android:text="Fotoğraf değiştir"
+        android:textSize="18sp"
+        app:backgroundTint="#FFBA08"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
     <Spinner
-        android:id="@+id/spinner"
+        android:id="@+id/aes_Spinner_Gender_EditProfilPage"
         android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
@@ -113,4 +127,14 @@
         app:layout_constraintBottom_toBottomOf="@+id/textView11"
         app:layout_constraintStart_toEndOf="@+id/textView11"
         app:layout_constraintTop_toTopOf="@+id/textView11" />
+
+    <ImageView
+        android:id="@+id/aes_img_ProfileImage_EditProfilePage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="20dp"
+        app:layout_constraintBottom_toTopOf="@+id/aes_btn_AddPhoto_EditProfilePage"
+        app:layout_constraintEnd_toEndOf="@+id/aes_btn_AddPhoto_EditProfilePage"
+        app:layout_constraintStart_toStartOf="@+id/aes_btn_AddPhoto_EditProfilePage"
+        tools:srcCompat="@tools:sample/avatars" />
 </androidx.constraintlayout.widget.ConstraintLayout>

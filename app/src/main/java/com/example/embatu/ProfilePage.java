@@ -3,9 +3,12 @@ package com.example.embatu;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.StrictMode;
+import android.util.Base64;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
@@ -21,6 +24,7 @@ import java.sql.Statement;
 public class ProfilePage extends AppCompatActivity {
 
     TextView textView, txt_UserBio_ProfilePage, aes_txt_FollowersCount_ProfilePage, aes_txt_FollowingCount_ProfilePage;
+    ImageView aes_img_ProfileImage_ProfilePage;
     String userID, userBio, targetUser_ID, followerCount, followingCount;
     View aes_img_Edit_ProfilePage;
     boolean isMyProfile;
@@ -54,6 +58,7 @@ public class ProfilePage extends AppCompatActivity {
 
 
         getSupportActionBar().hide();
+        aes_img_ProfileImage_ProfilePage = findViewById(R.id.aes_img_ProfileImage_ProfilePage);
         aes_txt_FollowersCount_ProfilePage = findViewById(R.id.aes_txt_FollowersCount_ProfilePage);
         aes_txt_FollowingCount_ProfilePage = findViewById(R.id.aes_txt_FollowingCount_ProfilePage);
         aes_btn_Follow_ProfilePage = findViewById(R.id.aes_btn_Follow_ProfilePage);
@@ -79,6 +84,20 @@ public class ProfilePage extends AppCompatActivity {
                 aes_btn_Follow_ProfilePage.setVisibility(Button.INVISIBLE);
                 textView.setText(userID);
             }
+        }
+
+        try {
+            resultSet = statement.executeQuery("SELECT user_Pic FROM UsersProfiles WHERE user_ID = '" + userID + "';");
+            while (resultSet.next()) {
+                if (resultSet.getBytes("user_Pic") != null) {
+                    String image = resultSet.getString("user_Pic");
+                    byte[] aes_pic = Base64.decode(image, Base64.DEFAULT);
+                    Bitmap bmp = BitmapFactory.decodeByteArray(aes_pic, 0, aes_pic.length);
+                    aes_img_ProfileImage_ProfilePage.setImageBitmap(bmp);
+                }
+            }
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
         }
 
         checkFollowCounts();
